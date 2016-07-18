@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC0108CD1D3D391B0037DA80 /* VisitorLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0108CC1D3D391B0037DA80 /* VisitorLoginView.swift */; };
+		BC0108CF1D3D39C80037DA80 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0108CE1D3D39C80037DA80 /* BaseTableViewController.swift */; };
 		BC47B3811D35382800737010 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC47B3801D35382800737010 /* AppDelegate.swift */; };
 		BC47B3881D35382800737010 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC47B3871D35382800737010 /* Assets.xcassets */; };
 		BC47B3A01D353EBA00737010 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC47B39F1D353EBA00737010 /* MainViewController.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC0108CC1D3D391B0037DA80 /* VisitorLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorLoginView.swift; sourceTree = "<group>"; };
+		BC0108CE1D3D39C80037DA80 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		BC47B37D1D35382800737010 /* SwiftWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC47B3801D35382800737010 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC47B3871D35382800737010 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC0108CB1D3D38660037DA80 /* VisitorLoginView */ = {
+			isa = PBXGroup;
+			children = (
+				BC0108CC1D3D391B0037DA80 /* VisitorLoginView.swift */,
+			);
+			path = VisitorLoginView;
+			sourceTree = "<group>";
+		};
 		BC47B3741D35382800737010 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +116,8 @@
 		BC47B3971D353E5200737010 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				BC0108CB1D3D38660037DA80 /* VisitorLoginView */,
+				BC0108CE1D3D39C80037DA80 /* BaseTableViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -236,11 +250,13 @@
 			files = (
 				BC47B3A81D35407000737010 /* ProfileController.swift in Sources */,
 				BC47B3A41D353FF500737010 /* DiscoverController.swift in Sources */,
+				BC0108CF1D3D39C80037DA80 /* BaseTableViewController.swift in Sources */,
 				BC47B3A61D35404400737010 /* MessageController.swift in Sources */,
 				BC47B3A01D353EBA00737010 /* MainViewController.swift in Sources */,
 				BC47B3AA1D3540C700737010 /* MainTabBar.swift in Sources */,
 				BC47B3AC1D35435700737010 /* Comman.swift in Sources */,
 				BC47B3811D35382800737010 /* AppDelegate.swift in Sources */,
+				BC0108CD1D3D391B0037DA80 /* VisitorLoginView.swift in Sources */,
 				BC47B3A21D353F8200737010 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
