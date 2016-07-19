@@ -40,6 +40,11 @@ class BaseTableViewController: UITableViewController, VisitorLoginViewDelegate {
     
     func visitorWillLogin() {
         print("come in")
+        let oauth = OAuthViewController()
+        let nav = UINavigationController(rootViewController: oauth)
+        presentViewController(nav, animated: true) {
+            
+        }
     }
     
     //视图控制器

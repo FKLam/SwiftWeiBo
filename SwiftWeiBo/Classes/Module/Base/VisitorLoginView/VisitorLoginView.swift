@@ -8,12 +8,12 @@
 
 import UIKit
 
-protocol VisitorLoginViewDelegate: NSObjectProtocol {
+@objc protocol VisitorLoginViewDelegate: NSObjectProtocol {
     //协议方法
     //登陆
     func visitorWillLogin()
     //注册
-    func visitorWillRegister()
+    optional func visitorWillRegister()
 }
 
 class VisitorLoginView: UIView {
@@ -27,7 +27,7 @@ class VisitorLoginView: UIView {
         visitorDelegate?.visitorWillLogin()
     }
     @objc func registerBtnDidClick() {
-        visitorDelegate?.visitorWillRegister()
+        visitorDelegate?.visitorWillRegister?()
     }
     
     //MARK: 设置页面信息
