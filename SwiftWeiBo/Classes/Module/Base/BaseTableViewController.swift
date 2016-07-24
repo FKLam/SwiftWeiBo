@@ -10,7 +10,7 @@ import UIKit
 
 class BaseTableViewController: UITableViewController, VisitorLoginViewDelegate {
     //添加用户是否登录标记
-    var userLogin = false
+    var userLogin = UserAccountViewModel().userLogin
     var visitorLoginView: VisitorLoginView?
     //loadVIew是苹果专门为手写代码 准备的  等效与 sb / xib
     //一旦实现这个方法  xib / sb就自动失效

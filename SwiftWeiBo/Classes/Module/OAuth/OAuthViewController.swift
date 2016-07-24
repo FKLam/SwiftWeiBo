@@ -8,12 +8,9 @@
 
 import UIKit
 import SVProgressHUD
+import AFNetworking
 
 class OAuthViewController: UIViewController {
-    let client_id = "627727710"
-    let redirect_uri = "http://www.520it.com"
-    
-    
     let webView = UIWebView()
     
     @objc private func close() {
@@ -21,9 +18,8 @@ class OAuthViewController: UIViewController {
             
         }
     }
-    
     @objc private func fullAccount() {
-        let jsString = "document.getElementById('userId').value = '1312344701@qq.com' ,document.getElementById('passwd').value = 'FK01201002l';"
+        let jsString = "document.getElementById('userId').value = 'lfk01201002@3g.sina.cn' ,document.getElementById('passwd').value = '01201002lfk';"
         webView.stringByEvaluatingJavaScriptFromString(jsString)
     }
     
@@ -36,6 +32,11 @@ class OAuthViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         loadOauthPage()
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidAppear(animated)
+        SVProgressHUD.dismiss()
     }
     
     private func loadOauthPage() {
@@ -62,7 +63,27 @@ extension OAuthViewController: UIWebViewDelegate {
     
     // 此方法 返回true 当前对象可以正常工作
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        print(request.URL)
-        return true
+        guard let urlString = request.URL?.absoluteString else {
+            return false
+        }
+        // 是网页请求页面，或者请求授权页面
+        if urlString.hasPrefix("https://api.weibo.com") {
+            return true
+        }
+        
+        if !urlString.hasPrefix(redirect_uri) {
+            return false
+        }
+        
+        // 程序到这一定包含了回调url
+        guard let query = request.URL?.query else {
+            return false
+        }
+        let codeStr = "code="
+        let code = query.substringFromIndex(codeStr.endIndex)
+        UserAccountViewModel().loadAccessToken(code) { (error) in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        return false
     }
 }
